@@ -1,6 +1,6 @@
 {
   "name": "hexo-asset-link",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "Convert base-relative asset links to root-relative ones",
   "main": "index.js",
   "scripts": {
