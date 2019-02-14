@@ -48,11 +48,11 @@ Then in `2019-02-14-Test-Post.md`:
 
 ### Unrecommended Way
 
-This way is quite dirty, and **only** works when there is **no subdirectory**, e.g. `2019-02-14-Test-Post/Sub/Directory/Test-Image.png`.
+This way is quite dirty, and will **not** work when there exists **any subdirectory**, e.g. `2019-02-14-Test-Post/Sub/Directory/Test-Image.png`.
 
 ```markdown
 ![Alt Text](Test-Image.png "Title Text")
 [Text](Test-Other-File.pdf)
 ```
 
-> Writing in this way makes no sense, since vanilla markdown will **not** find asset files.
+Writing in this way makes no sense to markdown, asset files will **not** be found correctly.
