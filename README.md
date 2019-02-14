@@ -56,3 +56,27 @@ This way is quite dirty, and will **not** work when there exists **any subdirect
 ```
 
 Writing in this way makes no sense to markdown, asset files will **not** be found correctly.
+
+## FAQ
+
+### Why not hexo-asset-image?
+
+1. It has been unmaintained for two years;
+2. It has security vulnerability due to out-dated dependency;
+3. It seems incompatible with plugins like hexo-abbrlink.
+
+### Then is hexo-asset-link better?
+
+1. My code is really better (^_^);
+2. If this plugin meets your requirement, just install and have fun writing;
+3. A detailed issue is always welcomed if any trouble.
+
+## Reference
+
+Coding style and `cheerio` usage: [hexo/external_link.js at 3.8.0 · hexojs/hexo](https://github.com/hexojs/hexo/blob/3.8.0/lib/plugins/filter/after_post_render/external_link.js)
+
+### API
+
+[Filter | Hexo](https://hexo.io/api/filter)
+
+[URL | Node.js v10.15.1 Documentation](https://nodejs.org/docs/latest-v10.x/api/url.html)
