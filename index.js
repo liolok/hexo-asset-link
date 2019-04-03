@@ -12,9 +12,9 @@ hexo.extend.filter.register('after_post_render', function(data) {
   const root = url.parse(data.permalink).pathname.replace(/\.[^/.]+$/, '/');
   console.info && console.info("Asset folder root-relative path: " + root);
 
-	const keys = ['excerpt', 'more', 'content'];
-	for (let i = 0; i < keys.length; i++) {
-		const $ = cheerio.load(data[keys[i]], {decodeEntities: false});
+  const keys = ['excerpt', 'more', 'content'];
+  for (let i = 0; i < keys.length; i++) {
+    const $ = cheerio.load(data[keys[i]], {decodeEntities: false});
 
     function convertLink(element, attribute) {
       $(element).each(function() {
@@ -35,5 +35,5 @@ hexo.extend.filter.register('after_post_render', function(data) {
     convertLink('a', 'href');  // other files
 
     data[keys[i]] = $.html();
-	}
+  }
 });
