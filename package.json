@@ -24,6 +24,6 @@
   },
   "homepage": "https://github.com/liolok/hexo-asset-link#readme",
   "dependencies": {
-    "cheerio": ">=0.22.0"
+    "cheerio": "^1.0.0-rc.3"
   }
 }
