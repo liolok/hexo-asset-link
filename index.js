@@ -25,7 +25,7 @@ hexo.extend.filter.register('after_post_render', function(data) {
         if (attr.startsWith('#')) return;  // in-page fragment link
 
         // Get file's path which is base-relative to asset folder
-        const base = attr.replace(/.*?[^\.]\//, '');
+        const base = decodeURI(attr.replace(/.*?[^\.]\//, ''));
         $(this).attr(attribute, root + base);
         console.info && console.info("Converted link: " + root + base);
       });
