@@ -24,7 +24,7 @@ hexo.extend.filter.register('after_post_render', function (data) {
         ) return;  // only process base-relative link
 
         // Get file's path which is base-relative to asset folder (strip prefix)
-        const base = decodeURI(link.replace(/.*?[^\.]\//, ''));
+        const base = decodeURI(link.replace(/^\.\//, '').replace(/^.*?\//, ''));
         $(this).attr(attribute, root + base);
         console.info && console.info("Converted link: " + root + base);
       });
