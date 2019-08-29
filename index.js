@@ -1,6 +1,7 @@
 'use strict';
 
 const url = require('url');
+const chalk = require('chalk');
 const cheerio = require('cheerio');
 
 hexo.extend.filter.register('after_post_render', function (data) {
@@ -8,9 +9,9 @@ hexo.extend.filter.register('after_post_render', function (data) {
 
   // Get asset folder's path which is root-relative to site host (strip suffix)
   const root = url.parse(data.permalink).pathname.replace(/\.[^/.]+$/, '/');
-  console.info && console.info("Asset folder root-relative path: " + root);
+  hexo.log.info('Post asset folder: %s', chalk.blue(root));
 
-  const keys = ['excerpt', 'more', 'content'];
+  const keys = ['content', 'excerpt', 'more'];
   for (let i = 0; i < keys.length; i++) {
     const $ = cheerio.load(data[keys[i]], { decodeEntities: false });
 
@@ -26,7 +27,8 @@ hexo.extend.filter.register('after_post_render', function (data) {
         // Get file's path which is base-relative to asset folder (strip prefix)
         const base = decodeURI(link.replace(/^\.\//, '').replace(/^.*?\//, ''));
         $(this).attr(attribute, root + base);
-        console.info && console.info("Converted link: " + root + base);
+        hexo.log.debug('Link converted in data[\'%s\']: %s',
+          keys[i], chalk.cyan(root + base));
       });
     }
 
