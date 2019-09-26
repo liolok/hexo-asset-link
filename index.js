@@ -19,7 +19,7 @@ hexo.extend.filter.register('after_post_render', function (data) {
       $(element).each(function () {
         const link = $(this).attr(attribute);
         if (!link  // no link found in element
-          || url.parse(link).protocal  // absolute link
+          || url.parse(link).protocol  // absolute link
           || link.startsWith('/')  // root-relative link
           || link.startsWith('#')  // in-page fragment link
         ) return;  // only process base-relative link
