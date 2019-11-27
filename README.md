@@ -1,6 +1,6 @@
 # hexo-asset-link [![NPM version](https://badge.fury.io/js/hexo-asset-link.svg)](https://www.npmjs.com/package/hexo-asset-link)
 
-Convert base-relative asset links to root-relative ones, so that user can insert assets like images in markdown way.
+Convert Markdown style asset links to HTML style ones.
 
 ## Install
 
@@ -10,12 +10,21 @@ In Hexo blog instance directory:
 $ npm i -s hexo-asset-link
 ```
 
+**or** if you prefer yarn:
+
+```shell
+$ yarn add hexo-asset-link
+```
+
 ## Config
 
-This plugin works only when [`Post Asset Folders`](https://hexo.io/docs/asset-folders#Post-Asset-Folder) feature enabled in `_config.yml`:
+**Find** (not *add*) and enable [`Post Asset Folders`](https://hexo.io/docs/asset-folders#Post-Asset-Folder) feature in `_config.yml`:
 
 ```yml
+# Writing
+...
 post_asset_folder: true
+...
 ```
 
 ## Usage
@@ -56,24 +65,10 @@ After this we'll get the right asset path result in:
 
 Now shall we just have fun writing!
 
-## Comparision to `hexo-asset-image`
-
-At first when I wrote this plugin, the older `hexo-asset-image` has been inactive for quite a long while.
-
- Up to now, there is still a lot of issues remaining open. And I smell of hardcode (no offence), which may lead to more and more problems.
-
-In the end, all of these trouble comes from upstream Hexo, I'll keep an eye on it. This plugin's maintenance will last until I deprecate Hexo, which would a long time later, no need to worry.
-
 ## Reference
 
-Coding style and `cheerio` usage: [hexo/external_link.js at 3.9.0 · hexojs/hexo](https://github.com/hexojs/hexo/blob/3.9.0/lib/plugins/filter/after_post_render/external_link.js)
-
-### API
-
-[Filter | Hexo](https://hexo.io/api/filter)
-
-[`url.parse`](https://nodejs.org/docs/latest-v12.x/api/url.html#url_url_parse_urlstring_parsequerystring_slashesdenotehost "URL | Node.js v12.9.1 Documentation")
-
-[`url.pathname`](https://nodejs.org/docs/latest-v12.x/api/url.html#url_url_pathname "URL | Node.js v12.9.1 Documentation")
-
-[`url.protocol`](https://nodejs.org/docs/latest-v12.x/api/url.html#url_url_protocol "URL | Node.js v12.9.1 Documentation")
+- [Filter | Hexo](https://hexo.io/api/filter "Filter | Hexo")
+- [Posts | Hexo](https://hexo.io/api/posts "Posts | Hexo")
+- [`url.parse`](https://nodejs.org/docs/latest-v13.x/api/url.html#url_url_parse_urlstring_parsequerystring_slashesdenotehost "URL | Node.js v13.2.0 Documentation")
+- [`url.pathname`](https://nodejs.org/docs/latest-v13.x/api/url.html#url_url_pathname "URL | Node.js v13.2.0 Documentation")
+- [RegExp - JavaScript | MDN](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/RegExp "RegExp - JavaScript | MDN")
