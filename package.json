@@ -23,8 +23,7 @@
     "url": "https://github.com/liolok/hexo-asset-link/issues"
   },
   "homepage": "https://github.com/liolok/hexo-asset-link#readme",
-  "dependencies": {
-    "chalk": "^1.1.1",
-    "cheerio": "0.22.0"
+  "peerDependencies": {
+    "hexo": "^4.0.0"
   }
 }
