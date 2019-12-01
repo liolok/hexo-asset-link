@@ -6,8 +6,8 @@ const chalk = require('chalk');
 hexo.extend.filter.register('before_post_render', function (data) {
   // Need post asset folder option enabled and asset_dir attribute available
   if (!hexo.config.post_asset_folder || !data.asset_dir) return;
-  // Make sure path separator is slash rather than back-slash.
-  let asset_dir = data.asset_dir.replace('\\', '/');
+  // Make sure path delimiter is slash rather than backslash.
+  let asset_dir = data.asset_dir.replace(/\\/g, '/');
   hexo.log.d('Post asset folder full path:', chalk.magenta(asset_dir));
   // Split hierarchy, filter empty string, last one is asset folder's name.
   let asset_dir_name = asset_dir.split('/').filter(i => i).pop();
