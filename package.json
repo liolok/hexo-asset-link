@@ -1,6 +1,6 @@
 {
   "name": "hexo-asset-link",
-  "version": "2.0.0",
+  "version": "2.0.1",
   "description": "Convert Markdown style asset links to HTML style ones.",
   "main": "index.js",
   "scripts": {
@@ -17,7 +17,7 @@
     "image",
     "link"
   ],
-  "author": "liolok <liolokit@gmail.com> (https://liolok.github.io)",
+  "author": "liolok <hexo@liolok.com> (liolok.com)",
   "license": "MIT",
   "bugs": {
     "url": "https://github.com/liolok/hexo-asset-link/issues"
