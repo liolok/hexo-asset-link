@@ -8,11 +8,9 @@ if (hexo.config.post_asset_folder) hexo.extend.filter.register('before_post_rend
 
 function convertLink(data) {
   if (!data.asset_dir) return; // need asset_dir attribute available
-  // Make sure path delimiter is slash rather than backslash.
-  let asset_dir = data.asset_dir.replace(/\\/g, '/');
-  hexo.log.d('Post asset folder full path:', chalk.magenta(asset_dir));
-  // Split hierarchy, filter empty string, last one is asset folder's name.
-  let asset_dir_name = asset_dir.split('/').filter(i => i).pop();
+  hexo.log.d('Post asset folder path:', chalk.magenta(data.asset_dir));
+  // Split by path delimiter, filter out empty string, last one is asset folder's name.
+  let asset_dir_name = data.asset_dir.split(/[\/\\]/).filter(i => i).pop();
   hexo.log.d('Post asset folder name:', chalk.magenta(asset_dir_name));
   // Start with './' or not, end with '/', this is how user write asset links in markdown.
   let path_markdown = RegExp('(\.\/)?' + asset_dir_name + '\/', 'g');
