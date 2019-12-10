@@ -3,9 +3,11 @@
 const url = require('url');
 const chalk = require('chalk');
 
-hexo.extend.filter.register('before_post_render', function (data) {
-  // Need post asset folder option enabled and asset_dir attribute available
-  if (!hexo.config.post_asset_folder || !data.asset_dir) return;
+// Only work when post asset folder option enabled
+if (hexo.config.post_asset_folder) hexo.extend.filter.register('before_post_render', convertLink);
+
+function convertLink(data) {
+  if (!data.asset_dir) return; // need asset_dir attribute available
   // Make sure path delimiter is slash rather than backslash.
   let asset_dir = data.asset_dir.replace(/\\/g, '/');
   hexo.log.d('Post asset folder full path:', chalk.magenta(asset_dir));
@@ -22,4 +24,4 @@ hexo.extend.filter.register('before_post_render', function (data) {
   let path_html = pathname.replace(/\.[^/.]+$/, '/');
   data.content = data.content.replace(path_markdown, path_html);
   hexo.log.i('Path converted:', chalk.yellow(path_markdown.toString()), '→', chalk.green(path_html));
-});
+}
