@@ -1,6 +1,6 @@
 {
   "name": "hexo-asset-link",
-  "version": "2.0.1",
+  "version": "2.0.2",
   "description": "Convert Markdown style asset links to HTML style ones.",
   "main": "index.js",
   "scripts": {
@@ -24,6 +24,6 @@
   },
   "homepage": "https://github.com/liolok/hexo-asset-link#readme",
   "peerDependencies": {
-    "hexo": "^4.0.0"
+    "hexo": "^4.0.0 || ^5.0.0"
   }
 }
