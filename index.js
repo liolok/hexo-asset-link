@@ -12,8 +12,10 @@ function convertLink(data) {
   // Split by path delimiter, filter out empty string, last one is asset folder's name.
   let asset_dir_name = data.asset_dir.split(/[\/\\]/).filter(i => i).pop();
   hexo.log.d('Post asset folder name:', chalk.magenta(asset_dir_name));
-  // Start with './' or not, end with '/', this is how user write asset links in markdown.
-  let path_markdown = RegExp('(\.\/)?' + asset_dir_name + '\/', 'g');
+  // Character may be ahead of paths: '(' or '<' or whitespace.
+  let look_behind = '(?<=[\(<\s])';
+  // Asset paths in markdown start with './' or not, then folder's name, end with '/'.
+  let path_markdown = RegExp(look_behind + '(\.\/)?' + asset_dir_name + '\/', 'g');
   if (!path_markdown.test(data.content)) return; // no asset link found, do nothing
   // Permalink's pathname, supposed to start with '/'
   let pathname = url.parse(data.permalink).pathname;
