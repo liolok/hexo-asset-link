@@ -69,6 +69,6 @@ Now shall we just have fun writing!
 
 - [Filter | Hexo](https://hexo.io/api/filter "Filter | Hexo")
 - [Posts | Hexo](https://hexo.io/api/posts "Posts | Hexo")
-- [`url.parse`](https://nodejs.org/docs/latest-v13.x/api/url.html#url_url_parse_urlstring_parsequerystring_slashesdenotehost "URL | Node.js v13.2.0 Documentation")
-- [`url.pathname`](https://nodejs.org/docs/latest-v13.x/api/url.html#url_url_pathname "URL | Node.js v13.2.0 Documentation")
+- [URL | Node.js](https://nodejs.org/docs/latest-v18.x/api/url.html#new-urlinput-base)
+- [[URL | Node.js](https://nodejs.org/docs/latest-v18.x/api/url.html#urlpathname)](https://nodejs.org/docs/latest-v13.x/api/url.html#url_url_pathname)
 - [RegExp - JavaScript | MDN](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/RegExp "RegExp - JavaScript | MDN")
