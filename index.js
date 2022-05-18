@@ -1,6 +1,5 @@
 'use strict';
 
-const url = require('url');
 const chalk = require('chalk');
 
 // Only work when post asset folder option enabled
@@ -18,7 +17,7 @@ function convertLink(data) {
   let path_markdown = RegExp(look_behind + '(.\/)?' + asset_dir_name + '\/', 'g');
   if (!path_markdown.test(data.content)) return; // no asset link found, do nothing
   // Permalink's pathname, supposed to start with '/'
-  let pathname = url.parse(data.permalink).pathname;
+  let pathname = new URL(data.permalink).pathname;
   hexo.log.d('Post html path name:', chalk.magenta(pathname));
   // Strip any suffix if exists, supposed to start and end with '/', this is where assets would be in html.
   let path_html = pathname.replace(/\.[^/.]+$/, '/');
