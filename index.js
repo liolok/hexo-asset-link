@@ -14,7 +14,7 @@ function convertLink(data) {
   // Character may be ahead of paths: '(' or '<' or whitespace.
   const look_behind = '(?<=[(<\\s])';
   // Asset paths in markdown start with './' or not, then folder's name, end with '/'.
-  const path_markdown = RegExp(look_behind + '(.\/)?' + asset_dir_name + '\/', 'g');
+  const path_markdown = RegExp(look_behind + '(.\/)?' + asset_dir_name.replace(/[/\-\\^$*+?.()|[\]{}]/g, '\\$&') + '\/', 'g');
   if (!path_markdown.test(data.content)) return; // no asset link found, do nothing
   // Permalink's pathname, supposed to start with '/'
   const pathname = new URL(data.permalink).pathname;
