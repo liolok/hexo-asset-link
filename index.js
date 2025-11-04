@@ -1,6 +1,6 @@
 'use strict';
 
-import pc from 'picocolors';
+const pc = require('picocolors');
 
 // Only work when post asset folder option enabled
 if (hexo.config.post_asset_folder) hexo.extend.filter.register('before_post_render', convertLink);
